@@ -17,7 +17,6 @@ clean_energy_data()
 
 def global_energy_summaryAPI():
     result = {
-        "message": "Global overview of energy consumption, pricing, emissions and shares",
         "summary": {
             "total_countries": df['Country'].nunique(),
             "highest_energy_country": df.loc[df['Total Energy Consumption (TWh)'].idxmax(), "Country"],
@@ -37,7 +36,6 @@ def renewable_leadersAPI(limit=7):
         .head(limit)
     )
     return {
-        "message": f"Top {limit} countries with highest renewable energy share (%)",
         "data": data.to_dict(orient='records')
     }
 
@@ -45,7 +43,6 @@ def cleanest_countriesAPI(limit=8):
     sorted_df = df.sort_values(by='Carbon Emissions (Million Tons)', ascending=True)
 
     return {
-        "message": f"Top {limit} countries with the lowest carbon emissions",
         "units": {"emissions": "Million Tons CO2"},
         "data": sorted_df[['Country', 'Year', 'Carbon Emissions (Million Tons)']]
                 .head(limit)
@@ -64,7 +61,6 @@ def energy_price_comparisonAPI(c1, c2):
     p2 = round(d2['Energy Price Index (USD/kWh)'].mean(), 4)
 
     return {
-        "message": f"Energy price comparison between {c1} and {c2}",
         "summary": {
             "higher_price_country": c1 if p1 > p2 else c2,
             "difference_usd_per_kwh": round(abs(p1 - p2), 4)
@@ -132,9 +128,5 @@ def factor_summaryAPI():
             "minimum": round(df[col].min(), 3),
             "min_country": df.loc[df[col].idxmin(), "Country"]
         })
-
-    return {
-        "message": "Statistical summary (avg, max, min) of all major energy metrics",
-        "data": result
-    }
-
+    return result
+    

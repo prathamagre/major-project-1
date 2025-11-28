@@ -25,11 +25,7 @@ def tv_title():
 @app.route('/api/movie-tv-distribution', methods=['GET'])
 def movie_tv_distribution_api():
     result = netflix.movie_tv_distributionAPI()
-    response = {
-        "message": "Distribution of Movies and TV Shows on Netflix",
-        "data": result
-    }
-    return jsonify(response)
+    return jsonify(result)
 
 @app.route('/api/top-directors', methods=['GET'])
 def top_directors_api():
@@ -47,11 +43,7 @@ def country_stats_api():
 @app.route('/api/rating-distribution', methods=['GET'])
 def rating_distribution_api():
     result = netflix.rating_distributionAPI()
-    response = {
-        "message": "Distribution of Netflix titles by rating type (in percentage)",
-        "data": result
-    }
-    return jsonify(response)
+    return jsonify(result)
 
 #-----------------------------World Happiness Report Dataset APIs--------------------------------
 

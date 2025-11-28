@@ -1,7 +1,5 @@
 import pandas as pd
 import numpy as np 
-import random
-from datetime import datetime
 
 df = pd.read_csv('C:/Users/dell/Desktop/Major project/data/netflix_cleaned.csv')
 
@@ -23,8 +21,6 @@ def movie_by_titleAPI(title):
         if isinstance(value ,(np.int64,np.float64)):
             row_dict[key] = int(value)
     return {
-        "message": f"Movie details for '{row_dict['title']}'",
-        "data": {
             "title": row_dict.get("title"),
             "main_director": row_dict.get("Main_director"),
             "cast": row_dict.get("cast"),
@@ -35,7 +31,6 @@ def movie_by_titleAPI(title):
             "genres": row_dict.get("genres"),
             "description": row_dict.get("description")
         }
-    }
 
 def tvshow_by_titleAPI(title):
     title = title.strip().lower()
@@ -55,8 +50,6 @@ def tvshow_by_titleAPI(title):
         if isinstance(value ,(np.int64,np.float64)):
             row_dict[key] = int(value)
     return {
-        "message": f"Movie details for '{row_dict['title']}'",
-        "data": {
             "title": row_dict.get("title"),
             "main_director": row_dict.get("Main_director"),
             "cast": row_dict.get("cast"),
@@ -67,12 +60,10 @@ def tvshow_by_titleAPI(title):
             "genres": row_dict.get("genres"),
             "description": row_dict.get("description")
         }
-    }
 
 def movie_tv_distributionAPI():
-    """
-    Returns the count and percentage distribution of Movies and TV Shows.
-    """
+    # Returns the count and percentage distribution of Movies and TV Shows.
+
     # Clean and standardize the 'type' column
     df['type'] = df['type'].fillna('Unspecified').astype(str).str.strip()
 
@@ -102,14 +93,12 @@ def top_10_directorsAPI():
         .sort_values(by='title_count', ascending=False)
         .head(10)
     )
-
     # Convert to JSON serializable format
     return top_directors.to_dict(orient='records')
 
 def country_statsAPI():
-    """
-    Returns top 10 countries where Netflix is mostly used (by number of titles).
-    """
+    # Returns top 10 countries where Netflix is mostly used (by number of titles).
+
     # Clean country data
     df['country'] = df['country'].fillna('Unspecified').astype(str)
     df['country'] = df['country'].apply(lambda x: x.split(',')[0].strip())  # handle multiple country entries
@@ -123,7 +112,6 @@ def country_statsAPI():
         .sort_values(by='title_count', ascending=False)
         .head(10)
     )
-
     # Convert to list of dictionaries for JSON output
     return country_stats.to_dict(orient='records')
 
@@ -150,7 +138,6 @@ def rating_distributionAPI():
     Returns the percentage distribution of titles based on their rating type
     (like TV-MA, TV-14, PG-13, etc.)
     """
-    
     # Handle missing values
     df['rating'] = df['rating'].fillna('Unspecified').astype(str)
 

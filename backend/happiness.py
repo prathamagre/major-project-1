@@ -40,17 +40,14 @@ def factor_impactAPI():
         {"factor": k, "correlation_with_happiness": round(v, 3)}
         for k, v in corr.items() if k != 'Happiness Score'
     ]
-    return {
-        "message": "Correlation strength of each factor with Happiness Score",
-        "data": result
-    }
+    return result
+    
 
 def country_infoAPI(name):
     country = df[df['Country'].str.lower() == name.lower()]
     if country.empty:
         return {"message": "Country data unavailable", "error": f"'{name}' not found in dataset."}
     return {
-        "message": f"Detailed happiness data for {name}",
         "result": country.iloc[0].to_dict()
     }
 
@@ -67,7 +64,6 @@ def compare_countriesAPI(country1, country2):
     winner = country1 if score1 > score2 else country2
 
     return {
-        "message": f"Comparison of happiness scores between {country1} and {country2}",
         "summary": {
             "more_happy_country": winner,
             "score_difference": diff
@@ -88,7 +84,6 @@ def happiness_gapAPI(region):
     gap = round(happiest['Happiness Score'] - saddest['Happiness Score'], 3)
 
     return {
-        "message": f"Happiness gap between happiest and least happy countries in {region}",
         "summary": {
             "happiest_country": happiest['Country'],
             "saddest_country": saddest['Country'],
@@ -107,7 +102,6 @@ def country_rank_trendAPI(country):
     status = "Top 10%" if percentile >= 90 else "Above Average" if percentile >= 50 else "Below Average"
 
     return {
-        "message": f"Relative happiness ranking of {country}",
         "result": {
             "rank": rank,
             "percentile_position": percentile,
@@ -144,8 +138,5 @@ def factor_averagesAPI():
             "min_value": min_val,
             "min_value_country": min_country
         })
-
-    return {
-        "message": "Global averages with max and min values for each happiness factor",
-        "data": result
-    }
+    return result
+    
