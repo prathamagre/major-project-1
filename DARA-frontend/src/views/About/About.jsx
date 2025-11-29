@@ -39,9 +39,9 @@ function AboutPage() {
           <section className="about-section">
             <h2>Get Started Today</h2>
             <p>
-              Join thousands of developers who are building amazing applications with our data API platform. Start your free trial today and experience the difference quality data makes.
+              Join thousands of developers who are building amazing applications with our data API platform. Start today and experience the difference quality data makes.
             </p>
-            <button className="btn btn-primary">Start Free Trial</button>
+            <a href="/datasets"><button className="btn btn-primary">Start Here</button></a>
           </section>
         </div>
       </div>
