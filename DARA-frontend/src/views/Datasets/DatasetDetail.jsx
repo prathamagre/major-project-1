@@ -44,7 +44,7 @@ function DatasetDetail() {
 
           <div style={{display:'flex',gap:12,marginTop:16}}>
             <a className="btn btn-primary" href="#">View API Docs</a>
-            <Link to="/datasets" className="btn">Back</Link>
+            <button onClick={() => window.history.back()} className="btn back-btn">Back</button>
           </div>
         </div>
       </main>

@@ -28,11 +28,6 @@ export default function Features() {
           <p>Consistent, typed responses across endpoints</p>
         </div>
 
-        <div className="feature-card">
-          <span><img className="emoji" src={secureImg} alt="Secure" /></span>
-          <h3>Secure</h3>
-          <p>API keys, rate limits, and audit logs included</p>
-        </div>
       </div>
     </section>
   );

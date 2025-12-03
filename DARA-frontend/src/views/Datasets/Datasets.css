@@ -82,7 +82,8 @@ h5{
 .tag { background:#e0e7ff; color:#6366f1; padding:6px 10px; border-radius:999px; font-size:12px; }
 
 .btn { padding:10px 14px; border-radius:8px; cursor:pointer; border:none; font-weight:600; }
-.btn-primary { background:#6366f1; color:#fff; }
+.btn-primary { background:#6366f1; color:#fff;margin-top: 10px; }
+.back-btn {background:#fff; color:#6366f1; margin-top: 10px; border: #6366f1 solid 2px;}
 .btn-primary:hover { background: #fff; color:#6366f1; border:2px solid #6366f1; }
 
 /* modal */
