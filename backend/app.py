@@ -976,7 +976,11 @@ def internal_error(error):
 # RUN SERVER
 # ==========================================
 
-if __name__ == '__main__':
+# ==========================================
+# RUN SERVER
+# ==========================================
+
+if __name__ == "__main__":
     print("\n" + "="*50)
     print("🏅 Olympic Data API Server Starting...")
     print("="*50)
@@ -984,11 +988,14 @@ if __name__ == '__main__':
     print(f"👥 Total athletes: {df['ID'].nunique()}")
     print(f"🌍 Total countries: {df['NOC'].nunique()}")
     print(f"📅 Years covered: {df['Year'].min()} - {df['Year'].max()}")
-    print("\n🚀 Server running at: http://localhost:5000")
+    print("\n🚀 Local server running at: http://localhost:5000")
     print("📖 Documentation: http://localhost:5000/api/docs")
     print("="*50 + "\n")
-    
-    app.run(debug=True, host='0.0.0.0', port=5000)
+
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
 
 
 
