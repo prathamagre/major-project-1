@@ -17,7 +17,7 @@ export default function Documentation() {
 
   const fetchDocumentation = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/docs/detailed');
+      const response = await fetch('https://major-project-1-sxkx.onrender.com/api/docs/detailed');
       if (!response.ok) throw new Error('Failed to fetch documentation');
       const data = await response.json();
       setDocs(data);
@@ -167,11 +167,11 @@ export default function Documentation() {
                         <div className="details-section">
                           <h4>Example URL</h4>
                           <div className="example-url">
-                            <code>http://localhost:5000{endpoint.example_url}</code>
+                            <code>https://major-project-1-sxkx.onrender.com{endpoint.example_url}</code>
                             <button
                               className="copy-btn"
                               onClick={() => {
-                                navigator.clipboard.writeText(`http://localhost:5000${endpoint.example_url}`);
+                                navigator.clipboard.writeText(`https://major-project-1-sxkx.onrender.com${endpoint.example_url}`);
                                 alert('URL copied to clipboard!');
                               }}
                             >
