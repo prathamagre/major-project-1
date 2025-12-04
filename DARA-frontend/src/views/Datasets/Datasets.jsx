@@ -34,7 +34,7 @@ function DatasetsPage() {
 								<div className="dataset-tags">
 									{d.tags.map((t, i) => (<span className="tag" key={i}>{t}</span>))}
 								</div>
-											<Link to="/documentation" className="btn btn-primary">View API Docs</Link>
+									<Link to="/documentation" className="btn btn-primary">View API Docs</Link>
 							</article>
 						))}
 					</div>
@@ -54,7 +54,7 @@ function DatasetsPage() {
 							<div className="modal-tags">
 								{selected.tags.map((t,i) => <span className="tag" key={i}>{t}</span>)}
 							</div>
-							<button className="btn btn-primary">Get Started with API</button>
+							<Link to="/documentation" className="btn btn-primary">Get Started with API</Link>
 						</div>
 					</div>
 				)}
