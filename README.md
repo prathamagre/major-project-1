@@ -417,7 +417,9 @@ This project is open source and available under the MIT License - see the LICENS
 
 ## 👥 Authors
 
-- **Samarth-Makwey** - Project Creator & Maintainer
+- **Samarth-Makwey**
+- **Pratham Agre** 
+- **Sumit Solanki**  
 
 ---
 
