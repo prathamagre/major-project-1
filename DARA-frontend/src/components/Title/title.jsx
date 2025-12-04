@@ -1,4 +1,4 @@
-import './title.css';
+import './Title.css';
 import homeImg from '../../assets/homeImg.gif';
 
 function Title() {
