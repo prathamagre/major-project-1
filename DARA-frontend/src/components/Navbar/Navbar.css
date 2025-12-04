@@ -2,9 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 18px 40px;
+  padding: 10px 40px;
   background: white;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px #6b7280;
   position: sticky;
   top: 0px;
   margin: 10px;
@@ -12,12 +12,22 @@
   z-index: 1;
 }
 
-.logo {
+.logo-head {
   font-weight: bold;
   font-size: 32px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   cursor: pointer;
   color: #3f4198;
+  margin: 5px auto;
+  
+  
+}
+.logo-txt {
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: -8px;
+  margin-left: 2px;
+  color: #6b7280;
 }
 
 a{
@@ -32,6 +42,7 @@ a{
   font-size: 16px;
   cursor: pointer;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-top: 25px;
 }
 
 .nav-links li:hover {
@@ -42,4 +53,18 @@ a{
   box-shadow: 0px 3px 6px -2px #6366f1;
   padding: 0 2px 0 2px;
   border-radius: 5px;
+}
+@media (max-width: 768px) {
+  .logo{
+    margin: 2px auto;
+  }
+
+  .logo-head {
+    text-align: center;
+  }
+
+  .nav-links {
+    margin: auto 0px;
+    gap: 15px;
+  }
 }
