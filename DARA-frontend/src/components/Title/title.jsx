@@ -9,6 +9,7 @@ function Title() {
           <div className="hero-image">
             <img src={homeImg} alt="Data visualization" />
           </div>
+          <hr/>
           <div className="hero-text">
             <h1 className="hero-title">Data API Platform</h1>
             <p className="hero-subtitle">
